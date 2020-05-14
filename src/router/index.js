@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Home from '../views/Home.vue'
+// import Recommend from '../components/Recommend.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -22,14 +23,24 @@ const routes = [
       {
         path: '/about',
         name: 'About',
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+        component: () => import('../views/About.vue')
       }
+      // {
+      //   path: '/recommend',
+      //   name: 'Recommend',
+      //   component: Recommend
+      // },
     ]
   },
   {
     path: '/register',
     name: 'Registor',
     component: () => import('../views/Registor.vue')
+  },
+  {
+    path: '/userInfo',
+    name: 'User',
+    component: () => import('../components/User.vue')
   }
 ]
 

@@ -13,6 +13,13 @@ Vue.use(Vant)
 
 Vue.config.productionTip = false
 
+// 懒加载
+import Vuelazyload from 'vue-lazyload'
+Vue.use(Vuelazyload, {
+  // error: require("./assets/error.jpg"),
+  // loading: require("./assets/loading.gif")
+});
+
 // 导航钩子，全局钩子
 // router.beforeEach((to, from, next) => {
 //   let token = localStorage.getItem('token')

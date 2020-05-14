@@ -1,42 +1,31 @@
 <template>
   <div id="appheader">
-    <div class="icon">
-      <router-link to="/login">
-      <van-icon name="wap-nav" @click="login"/>
-      </router-link>
-    </div>
-    <div class="wrap">
-      <van-tabs v-model="active" animated>
-        <van-tab v-for="(item, index) in tab" :title="item.title" :key="index">{{ item.content }}</van-tab>
-      </van-tabs>
+    <Header></Header>
+    <div class="content">
+    <Recommend></Recommend>
     </div>
   </div>
 </template>
 
 <script>
+import Header from '../components/Header'
+import Recommend from '../components/Recommend'
 export default {
-  name: 'appheader',
+  name: 'Home',
   data() {
     return {
       active: 1,
-      tab: [
-        { title: '我的', content: '我的1' },
-        { title: '发现', content: '发现1' },
-        { title: '视频', content: '视频1' }
-      ]
     }
   },
-  methods: {
-    // login() {
-    //   this.$router.push('/login')
-    // }
-  }
+  methods: {},
+  components:{ Header, Recommend }
 }
 </script>
 <style scoped>
-#appheader {
+#home {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
 }
 .icon {
   flex: 2;
@@ -47,5 +36,8 @@ export default {
 .icon i {
   font-size: 2rem;
   cursor: pointer;
+}
+.content{
+  margin-top: -190%;
 }
 </style>

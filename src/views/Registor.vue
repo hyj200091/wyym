@@ -75,7 +75,7 @@ export default {
       this.axios.get('http://localhost:3000/captcha/sent?phone=' + this.phoneNumber)
     },
     onSubmit() {
-      console.log("1")
+      console.log('1')
       this.axios
         .get('http://localhost:3000/captcha/verify?phone=' + this.phoneNumber + '&captcha=' + this.vertifyCode)
         .then((res) => {

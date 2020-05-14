@@ -21,7 +21,7 @@
         :rules="[{ required: true, message: '请填写密码' }]"
       />
       <router-link to="/register">
-      <p>还没有账号?去注册</p>
+        <p>还没有账号?去注册</p>
       </router-link>
       <div style="margin: 16px;">
         <van-button round block type="info" native-type="submit" @click="submit">提交</van-button>
@@ -67,9 +67,15 @@ export default {
         .then((res) => {
           console.log(res.data.code)
           if (res.data.code == 200) {
-            // localStorage.setItem('token', res.data.token)
-            // this.$store.commit('setToken', res.date.token)
-            this.$notity({ type: 'success', message: '登录成功' })
+            this.$store.state.uid = res.data.account.id
+            // 存入sessionStorage 防止刷新数据消失
+            let id = JSON.stringify(res.data.account.id)
+            sessionStorage.setItem('uid', id)
+            //遮罩提示框
+            this.$dialog.alert({
+              message: '登录成功!'
+            })
+            this.$router.push('/home')
           }
           if (res.date.code == 502) {
             this.$notity({ type: 'warning', message: '密码错误' })
