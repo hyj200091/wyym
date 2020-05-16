@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/Login.vue'
 import Home from '../views/Home.vue'
-// import Recommend from '../components/Recommend.vue'
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter)
+
 const routes = [
   {
     path: '/',
@@ -21,19 +21,24 @@ const routes = [
     component: Home,
     children: [
       {
-        path: '/about',
-        name: 'About',
-        component: () => import('../views/About.vue')
+        path: '/recommend',
+        name: 'Recommend',
+        component: () => import('../views/Recommend.vue')
+      },
+      {
+        path: '/top',
+        name: 'Top',
+        component: () => import('../views/Top.vue')
+      },
+      {
+        path: '/singer',
+        name: 'Singer',
+        component: () => import('../views/Singer.vue')
       }
-      // {
-      //   path: '/recommend',
-      //   name: 'Recommend',
-      //   component: Recommend
-      // },
     ]
   },
   {
-    path: '/register',
+    path: '/registor',
     name: 'Registor',
     component: () => import('../views/Registor.vue')
   },
@@ -41,6 +46,11 @@ const routes = [
     path: '/userInfo',
     name: 'User',
     component: () => import('../components/User.vue')
+  },
+  {
+    path: '/top/:id',
+    name: 'TopDetail',
+    component: () => import('../views/TopDetail.vue')
   }
 ]
 
