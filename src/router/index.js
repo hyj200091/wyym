@@ -51,6 +51,11 @@ const routes = [
     path: '/top/:id',
     name: 'TopDetail',
     component: () => import('../views/TopDetail.vue')
+  },
+  {
+    path: '/update',
+    name: 'UpdateUser',
+    component: () => import('../views/UpdateUser.vue')
   }
 ]
 

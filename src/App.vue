@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <appfooter v-if="showfooter" />
+    <!-- <appfooter v-if="showfooter" /> -->
     <audio class="audio" ref="audio" @timeupdate="onTimeupdate" @loadedmetadata="onLoadedmetadata"></audio>
     <router-view />
   </div>
 </template>
 <script>
-import appfooter from '../src/components/Footer'
+// import appfooter from '../src/components/Footer'
 export default {
   name: 'app',
   // 提供可注入子组件属性
@@ -151,7 +151,7 @@ export default {
   updated() {
     this.showfooter = this.$store.state.showfooter
   },
-  components: { appfooter }
+  // components: { appfooter }
 }
 </script>
 <style lang="scss">

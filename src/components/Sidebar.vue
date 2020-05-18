@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="nav">
-      <router-link to="/user">
+      <router-link to="/update">
         <div class="user">用户信息</div>
       </router-link>
       <div class="tool" @click="nohave">工具</div>
